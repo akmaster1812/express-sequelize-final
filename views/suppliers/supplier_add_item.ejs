@@ -12,7 +12,7 @@
     Items: <br>
     <% if(data_suppliers[0].Items.length > 0) { %>
        <% data_suppliers[0].Items.forEach(item => { %>
-        <%=item.name%>
+        <%=item.name + ' @ ' + item.SupplierItem.price%>
       <% }) %>
     <% } else { %>
       No Item
