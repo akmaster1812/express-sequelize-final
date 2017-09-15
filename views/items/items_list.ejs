@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%=title%></title>
+  </head>
+  <body>
+    <h1><%=title%></h1>
+    <a href="/items/add"> Add Items</a>
+    <table border="1">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Codeitem</th>
+        <th>Options</th>
+      </tr>
+      <% if(data_items.length > 0) { %>
+        <% data_items.forEach(item => { %>
+          <tr>
+            <td><%=item.id%></td>
+            <td><%=item.name%></td>
+            <td><%=item.brand%></td>
+            <td><%=item.codeitem%></td>
+            <td>
+              <a href="/items/edit/<%=item.id%>"> Edit</a> |
+              <a href="/items/delete/<%=item.id%>">Delete</a>
+            </td>
+          </tr>
+        <% }) %>
+
+      <% } %>
+
+    </table>
+
+
+  </body>
+</html>

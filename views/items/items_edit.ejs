@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%=title%></title>
+  </head>
+  <body>
+    <h1><%=title%></h1>
+    <form class="" action="/items/edit/<%=data_items[0].id%>" method="post">
+      <input type="text" name="name" value="<%=data_items[0].name%>" placeholder="name">
+      <input type="text" name="brand" value="<%=data_items[0].brand%>" placeholder="brand">
+      <input type="text" name="codeitem" value="<%=data_items[0].codeitem%>" placeholder="codeitem">
+      <input type="submit" value="submit" >
+    </form>
+
+  </body>
+</html>

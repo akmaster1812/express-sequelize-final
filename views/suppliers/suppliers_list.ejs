@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%=title%></title>
+  </head>
+  <body>
+    <h1><%=title%></h1>
+    <a href="/items/add"> Add Items</a>
+    <table border="1">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Kota</th>
+        <th>Options</th>
+      </tr>
+      <% if(data_suppliers.length > 0) { %>
+        <% data_suppliers.forEach(suppliers => { %>
+          <tr>
+            <td><%=suppliers.id%></td>
+            <td><%=suppliers.name%></td>
+            <td><%=suppliers.kota%></td>
+            <td>
+              <a href="/suppliers/edit/<%=suppliers.id%>"> Edit</a> |
+              <a href="/suppliers/delete/<%=suppliers.id%>">Delete</a>
+            </td>
+          </tr>
+        <% }) %>
+
+      <% } %>
+
+    </table>
+
+
+  </body>
+</html>
