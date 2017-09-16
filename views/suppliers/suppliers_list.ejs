@@ -26,6 +26,7 @@
               <% if(suppliers.Items.length > 0){ %>
                   <%suppliers.Items.forEach(item => { %>
                     <%=item.name + ' @ ' + item.SupplierItem.price%>
+                    <br>
                   <% }) %>
               <% } else { %>
                 Not Items Yet

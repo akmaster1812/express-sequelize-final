@@ -13,6 +13,7 @@
         <th>Name</th>
         <th>Brand</th>
         <th>Codeitem</th>
+        <th>List Supplier</th>
         <th>Options</th>
       </tr>
       <% if(data_items.length > 0) { %>
@@ -22,6 +23,16 @@
             <td><%=item.name%></td>
             <td><%=item.brand%></td>
             <td><%=item.codeitem%></td>
+            <td>
+              <% if(item.Suppliers.length > 0){ %>
+                <% item.Suppliers.forEach(supplier => { %>
+                    <%= supplier.name + ' @ ' + supplier.SupplierItem.price%>
+                    <br>
+                <% }) %>
+              <% } else { %>
+                No Supplier Yet
+              <% } %>
+            </td>
             <td>
               <a href="/items/edit/<%=item.id%>"> Edit</a> |
               <a href="/items/delete/<%=item.id%>">Delete</a>

@@ -77,6 +77,7 @@ router.get('/:id/additem', (req,res)=> {
       include: [{model:models.Item}]
       })
       .then(supplier => {
+        res.send(supplier)
         models.Item.findAll()
           .then(items => {
             // res.send(supplier)
@@ -90,6 +91,9 @@ router.get('/:id/additem', (req,res)=> {
                   res.render('suppliers/supplier_add_item',{data_suppliers: supplier, data_items: items, title: 'Add Item for Supplier'} )
                 }
               })
+            } else {
+              // res.send({data_supplier: supplier, data_items: items, title: 'Add Item for Supplier'} )
+              res.render('suppliers/supplier_add_item',{data_suppliers: supplier, data_items: items, title: 'Add Item for Supplier'} )
             }
 
 
